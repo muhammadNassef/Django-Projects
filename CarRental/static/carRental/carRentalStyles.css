@@ -1,0 +1,90 @@
+body, html {
+            height: 100%;
+        }
+
+body {
+    background-image: url("img/bgCar.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#Topbar {
+        margin: 5px;
+}
+.topbar_links {
+    font-size : 17px ; 
+}
+
+#newAccount_form, #login_form {
+    background-color: rgba(255, 234, 204, 0.61);
+    backdrop-filter: blur(8px);
+    max-width: 320px;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+         }
+    }
+
+#btn_signup, #btn_login, #logSignImg {
+    margin: 2px;
+    animation: fadeInAnimation ease 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+         }
+    }
+   /*
+    a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 24px;
+      }
+      */
+      #movingText {
+        padding: 5px;
+        margin: 5px;
+        font-weight: 700;
+        text-align: center;
+        font-size: 40px;
+        font-family: Hack, sans-serif;
+        text-transform: uppercase;
+        background: linear-gradient(90deg, #000, rgb(180, 25, 25), #000);
+        letter-spacing: 5px;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-repeat: no-repeat;
+        background-size: 80%;
+        animation: shine 4s linear infinite;
+        float: center;
+      }
+      
+      @keyframes shine {
+        0% {
+          background-position-x: -500%;
+        }
+        100% {
+          background-position-x: 500%;
+        }
+      }
+      
+      /*  Checkout my other pens on  https://codepen.io/grohit/  */
+      

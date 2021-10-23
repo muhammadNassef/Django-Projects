@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Django Template Language, Python Django">
+    <meta name="description" content="Car Rental App">
+    <meta name="author" content="Muhammad Nassef">
+    <title> Car Rental Company</title>
+    <link rel="icon" href="{% static 'carRental/img/icon-car.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'carRental/FA/css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static 'carRental/carRentalStyles.css'%}">
+    <link rel="stylesheet" href="{% static 'carRental/bootstrap341/css/bootstrap.min.css'%}">
+    <script src="{% static 'carRental/bootstrap341/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'carRental/carRentaljs.js'%}"></script>
+</head>
+
+<body>
+    <div id="PageContent" class="container-fluid">
+        <!-- Topbar Start -->
+        <div id="Topbar" class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <a class="topbar_links" href="#"><i class="fa fa-phone"></i> +201***</a>
+                    <span>|</span>
+                    <a class="topbar_links" href="#">
+                        <i class="fa fa-envelope-open"></i> example@gmail.com</a>
+                </div>
+                <div class="col-md-6 text-center text-lg-right">
+                    <a class="topbar_links" href="#" target="_blank"
+                        title="Muhammad Nassef @ Facebook">
+                        <i class="fa fa-facebook"></i>
+                    </a>&emsp;
+                    <a class="topbar_links" href="#" target="_blank"
+                        title="Muhammad Nassef @ Twitter">
+                        <i class="fa fa-twitter"></i>
+                    </a>&emsp;
+                    <a class="topbar_links" href="#"
+                        target="_blank" title="Muhammad Nassef @ Linkedin">
+                        <i class="fa fa-linkedin"></i>
+                    </a>&emsp;
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+        <!-- Create New Account Form-->
+        <div id="newAccount_form" class="container">
+            <h2 class="text-primary"> Create New Account</h2>
+            <form autocomplete="off" name="signup_form" method="POST" action="{% url 'CarRental:signupView'%}"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="fname">First Name:</label>
+                    <input type="text" maxlength="10" class="form-control" id="fname" placeholder="First Name"
+                        name="fname" required>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" maxlength="10" class="form-control" id="lname" placeholder="Last Name"
+                        name="lname" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" maxlength="100" class="form-control" id="pwd" title="Maximum 100 Characters"
+                        placeholder="Enter password" name="pwd" required>
+                </div>
+                <div class="form-group">
+                    <label for="SSN">National ID number:</label>
+                    <input type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        minlength="0" maxlength="14" class="form-control" id="SSN" placeholder="National ID number"
+                        name="SSN" required>
+                </div>
+                <div id="carLicNum" class="form-group">
+                    <label for="carNumber">Car License Number: </label>
+                    <input type="text" maxlength="8" class="form-control" id="carNumber"
+                        placeholder="Car License Number" name="carNumber">
+                </div>
+                <div id="picForCarLicNum" class="form-group">
+                    <label for="picCarNumber">Picture For Car License Number: </label>
+                    <input type="file" accept="image/*" class="form-control" id="picCarNumber"
+                        placeholder="Picture For Car License Number" name="picCarNumber"
+                        title="Picture for both sides of car license">
+                </div>
+                <div class="form-group">
+                    <input type="radio" id="driver" name="driverOrcustomer" value="driver"
+                        onclick="driverButtonClicked()" required>
+                    <label for="driver">Driver</label><br>
+                    <input type="radio" id="customer" name="driverOrcustomer" value="customer"
+                        onclick="customerButtonClicked()" required>
+                    <label for="customer">Customer</label><br>
+                </div>
+                <button style="margin-left: 90px;" type="submit" class="btn btn-primary">Create Account</button>
+            </form><br>
+            <p>Already have an account?! <u onclick="btnLoginClicked()" style="cursor: pointer;">Login</u></p>
+        </div>
+        <!-- New Account Form End-->
+        <!-- Create Login Form-->
+        <div id="login_form" class="container">
+            <h2 class="text-primary"> Login To Your Account</h2>
+            <form autocomplete="off" name="login_form" method="POST" action="{% url 'CarRental:logInView'%}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd"
+                        required>
+                </div>
+                <button style="margin-left: 110px;" type="submit" class="btn btn-primary">Login</button>
+            </form><br>
+            <p>Forget Password?! <a style="font-size: 15px;" href="{% url 'CarRental:password_reset'%}">Reset
+                    Password</a></p>
+            <p>Create a new account?! <u onclick="btnSignupClicked()" style="cursor: pointer;">Sign Up</u></p>
+        </div>
+        <!-- Login Form End-->
+        <!-- startup content-->
+        <div>
+            <img id="logSignImg" src="{% static 'carRental/img/signin.svg' %}" width="50%" height="50%"><br>
+            <button id="btn_signup" type="button" class="btn btn-primary" onclick="btnSignupClicked()"> Sign Up
+            </button>
+            <button id="btn_login" type="button" class="btn btn-primary" onclick="btnLoginClicked ()"> Login </button>
+        </div>
+        <p id="movingText">Book Your Car Now !!</p>
+    </div>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <!--{% if message.tags %} class="{{ message.tags }}" {% endif %}>-->
+        <script> alert('{{ message }}');</script>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+
+</html>

@@ -1,0 +1,269 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Muhammad Nassef CV</title>
+    <link rel="icon" href="{% static 'onlinecv\img\resumeicon.png' %}" type="image/x-icon">
+    <link href="{% static 'onlinecv\bootstrap341\css\bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'onlinecv\ionicons\css\ionicons.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'carRental/FA/css/font-awesome.min.css'%}">
+    <link href="{% static 'onlinecv\mainStyle.css'%}" rel="stylesheet">
+</head>
+
+<body style="background-color: gray;">
+    <div class="container-fluid">
+        <button onclick="topFunction();" id="myBtn" title="back to top"><span
+                class="glyphicon glyphicon-chevron-up"></span>
+        </button>
+        <!-- header row -->
+        <div class="row" style="background-color: #1A222D; margin: 1px;">
+            <div class="col-sm-4">
+                <img style="align-content: center;" src="{% static 'onlinecv\img\suitimg.jpg' %}" class="img-rounded"
+                    title="Muhammad Nassef" alt="image for me!" width="60%" height="60%">
+            </div>
+            <div class="col-sm-8">
+                <h1 style="text-align: center;">
+                    Muhammad Ramadan Nassef
+                </h1>
+                <div class="row">
+                    <div class="col">
+                        <h4 style="padding-left: 3px;">
+                            <span class="glyphicon glyphicon-dashboard"></span> Objective
+                        </h4>
+                        <p style="margin-left: 10%;">
+                            Software Engineer graduate from <a
+                                href="http://www.azhar.edu.eg/engineering-cairo/syscompeng" target="_blank"><span
+                                    class="glyphicon glyphicon-education"></span> <u>Faculty of Engineering,
+                                    Systems and Computers dep, Al-Azhar University</u>,</a>
+                            <br>
+                            Good Experience in Python and Java technologies, interested in Machine Learning
+                            and Deep Learning.
+                        </p>
+                    </div>
+                </div>
+                <div class="row" id="personal_data">
+                    <div class="col-xs-6">
+                        <h4 style="padding-left: 3px;">
+                            <span class="glyphicon glyphicon-user"></span> Personal data
+                        </h4>
+                        <p style="margin-left: 10%;">
+                            <span class="glyphicon glyphicon-map-marker"></span> El-Mahalla El-Kubra, El Gharbeya,
+                            Egypt<br>
+                            <span class="glyphicon glyphicon-phone"></span> +201***
+                            <br>
+                            <span><i class="ion-social-whatsapp"></i></span> +201***
+                            <br>
+                            <span class="glyphicon glyphicon-envelope"></span><a href="#">
+                                <u>example@gmail.com</u></a><br>
+                            <span><i class="ion-social-linkedin"></i></span><a
+                                href="#" target="_blank">
+                                <u>Muhammad Nassef @ Linkedin</u></a><br>
+                            <span><i class="ion-social-github"></i></span><a href="#"
+                                target="_blank"> <u>Muhammad Nassef @ GitHub</u></a><br>
+                        </p>
+                    </div>
+                    <div class="col-xs-6">
+                        <h4 style="padding-left: 3px;">
+                            <i class="fa fa-refresh fa-spin"></i> Latest Work
+                        </h4>
+                        <p style="margin-left: 10%;">
+                            <i class="fa fa-car"></i><a href="{% url 'CarRental:CarRentalIndexView'%}" target="_blank">
+                                <u> Car Rental Website</u></a><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Skills row -->
+        <div id="Skills" class="row" style="background-color: #1A222D; margin: 1px;">
+            <h4 style="padding-left: 3px;">
+                <span><i class="ion-android-desktop"></i></span> Skills
+            </h4>
+            <div class="col-xs-6">
+                <ul style="list-style-type: circle;">
+                    {% for skill in first_half_range%}
+                    <li> {{skill}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-xs-6">
+                <ul style="list-style-type: circle;">
+                    {% for skill in second_half_range%}
+                    <li> {{skill}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <!-- Experience row -->
+        <div id="Experience" class="row" style="background-color: #1A222D; margin: 1px;">
+            <h4 style="padding-left: 3px;">
+                <span class="glyphicon glyphicon-briefcase"></span> Experience
+            </h4>
+            <div class="panel panel-primary"
+                style="margin-left: 10%; width: -moz-fit-content; width: fit-content; font-style: oblique;">
+                <div class="panel-heading"><b>Oct 2019 - Sep 2020<br></b></div>
+                <div class="panel-body"><b>Teaching Assistant • CEIT • Cairo, Egypt<br>
+                        CEIT: Egypt-India Center for Excellence of Information Technology</b><br>
+                </div>
+                <div class="panel-footer"><b>Role: Practical Classes (Java, and Python Instructor) – Classes
+                        Translation and Coordinator</b></div>
+            </div>
+            <div class="panel panel-primary"
+                style="margin-left: 10%; width: -moz-fit-content; width: fit-content; font-style: oblique;">
+                <div class="panel-heading"><b>Nov 2018 - Apr 2019<br></b></div>
+                <div class="panel-body"><b>Java Track Head • Az_SENCS • Cairo, Egypt<br>
+                        Az_SENCS: Azhar Software, Embedded, Network, Control, System (Student Activity)</b><br>
+                </div>
+                <div class="panel-footer"><b>Role: Technical Support and Java Instructor</b></div>
+            </div>
+            <div class="panel panel-primary"
+                style="margin-left: 10%; width: -moz-fit-content; width: fit-content; font-style: oblique;">
+                <div class="panel-heading"><b>Sep 2017 - Mar 2018<br></b></div>
+                <div class="panel-body"><b>Event Organizer • Ressala Charity Org • Cairo, Egypt<br></b>
+                </div>
+                <div class="panel-footer"><b>Volunteering: Event and Lectures Organizer, Public Relation </b></div>
+            </div>
+        </div>
+        <!-- Education row -->
+        <div id="Education" class="row" style="background-color: #1A222D; margin: 1px;">
+            <h4 style="padding-left: 3px;">
+                <span class="glyphicon glyphicon-education"></span> Education
+            </h4>
+            <div class="panel panel-primary"
+                style="margin-left: 10%; width: -moz-fit-content; width: fit-content; font-style: oblique;">
+                <div class="panel-heading"><b>2016 - 2021<br></b></div>
+                <div class="panel-body"><b>Systems and Computers Department.<br>
+                        <img style="float: right; width: 12%; height: 12%;"
+                            src="{% static 'onlinecv\img\azhrlogo.jpg' %}" class="img-rounded" alt="Al Azhar Logo"><br>
+                        Faculty of Engineering, Al-Azhar
+                        University.</b>
+                </div>
+                <div class="panel-footer"><b>Bachelor’s Degree, Grade: Very Good.</b></div>
+            </div>
+        </div>
+        <!-- Graduation Project row -->
+        <div id="Graduation_Project" class="row" style="background-color: #1A222D; margin: 1px;">
+            <h4 style="padding-left: 3px;">
+                <span><i class="ion-code"></i></span> Graduation Project
+            </h4>
+            <div class="panel panel-primary"
+                style="margin-left: 10%; width: -moz-fit-content; width: fit-content; font-style: oblique;">
+                <div class="panel-heading"><b>Name: <strong>Medical Prescription Handling Using AI
+                            Techniques.</strong><br>
+                        Used Technologies: TensorFlow, Flask, MySQL, and Google Colab.<br></b></div>
+                <div class="panel-body">
+                    <b>Main Idea:<br>
+                        &emsp;- Help pharmacists and normal people to read a doctor’s handwritten prescription using
+                        “CRNN”
+                        Computer
+                        Vision system.<br>
+                        &emsp;- Using the recognized text and search for the most similar Drug names using an existing
+                        API
+                        for
+                        Drugs.<br>
+                        &emsp;- Save all prescriptions and medical information in a digital format to avoid losing or
+                        using
+                        any
+                        papers.</b>
+                </div>
+                <div class="panel-footer"><b>Check The Source at <a style="color: black; "
+                            href="#" target="_blank"><span><i
+                                    class="ion-social-github"></i></span> <u>Github</u></a></b></div>
+            </div>
+        </div>
+        <!-- Certificates row -->
+        <div id="Certificates" class="row" style="background-color: #1A222D; margin: 1px;">
+            <h4 style="padding-left: 3px;"><a
+                    href="#" target="_blank">
+                    <span><i class="ion-ribbon-b"></i></span> <u>Certificates</u></a></h4>
+            <div class="col-xs-6">
+                <ul style="list-style-type: disc;">
+                    {% for certificate in first_half_range_cer%}
+                    <li> {{certificate}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-xs-6">
+                <ul style="list-style-type: disc;">
+                    {% for certificate in second_half_range_cer%}
+                    <li> {{certificate}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <!-- Training row -->
+        <div id="Training" class="row" style="background-color: #1A222D; margin: 1px;">
+            <h4 style="padding-left: 3px;">
+                <span><i class="ion-code-working"></i></span> Training
+            </h4>
+            <div class="panel panel-primary"
+                style="margin-left: 10%; width: -moz-fit-content; width: fit-content; font-style: oblique;">
+                <div class="panel-heading"><b>Front-end Web Developer.<br></b></div>
+                <div class="panel-body"><b>Faculty of Engineering, Al-Azhar University • Cairo, Egypt.</b></div>
+                <div class="panel-footer"><b>Front-end Web technologies: HTML, CSS, Bootstrap and JavaScript.</b></div>
+            </div>
+        </div>
+        <!-- Languages row -->
+        <div id="Languages" class="row" style="background-color: #1A222D; margin: 1px;">
+            <h4 style="padding-left: 3px;">
+                <span><i class="ion-android-globe"></i></span> Languages
+            </h4>
+            <table class="table table-hover"
+                style="margin-left: 10%; width: -moz-fit-content; width: fit-content; color: white;">
+                <thead>
+                    <tr>
+                        <th> Language</th>
+                        <th> Proficiency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> Arabic</td>
+                        <td> Native</td>
+                    </tr>
+                    <tr>
+                        <td> English</td>
+                        <td> Very Good</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Footer part-->
+        <footer>
+            <div class="container">
+                <div class="row" style="background-color: #BBBBFF;">
+                    <div class="credits" style="text-align: center; margin: 1px;">
+                        <b>Made with <span id="hrt" class="glyphicon glyphicon-heart"></span> by Muhammad Nassef</b><br>
+                        <b> <a id="fcbk" href="#" target="_blank"><span><i
+                                        class="ion-social-facebook"></i></span></a> &emsp;
+                            <a id="twtr" href="#" target="_blank"><span><i
+                                        class="ion-social-twitter"></i></span></a>
+                        </b>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- javascript part -->
+        <script>
+            mybutton = document.getElementById("myBtn");
+            window.onscroll = function () { scrollFunction(); };
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+        <script src="{% static 'onlinecv\bootstrap341\js\bootstrap.min.js'%}"></script>
+    </div>
+</body>
+
+</html>

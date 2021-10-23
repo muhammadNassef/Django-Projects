@@ -1,0 +1,8 @@
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+bootstrap341/
+FA/
+ionicons/
+-- SQLite.sql

@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Django Template Language, Python Django">
+    <meta name="description" content="welcome page after login or signup">
+    <meta name="author" content="Muhammad Nassef">
+    <title>Welcome Page</title>
+    <link rel="icon" href="{% static 'carRental/img/icon-car.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'carRental/FA/css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static 'carRental/bootstrap341/css/bootstrap.min.css'%}">
+    <script src="{% static 'carRental/bootstrap341/js/bootstrap.min.js'%}"></script>
+    <style>
+        body {
+            background-color: snow;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="margin: 5px;">
+            <h1 style="text-align: center;"> Welcome, {{User_name}}</h1>
+            <p style="text-align: center;">Hope You Doing Well..!</p>
+        </div>
+        <div class="row" style="margin: 5px;">
+            <img src="{% static 'carRental/img/programming.svg' %}" class="center">
+            <h2 style="text-align: center;">Coming Soon! <i class="fa fa-spinner fa-pulse"></i></h2>
+            <h4 style="text-align: center;">Developers Are Working Now</h4>
+        </div>
+        <div class="row" style="margin: 5px; font-size: larger;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <a href="#"><i class="fa fa-phone"></i> +201***</a>
+                        <span>|</span>
+                        <a href="#">
+                            <i class="fa fa-envelope-open"></i> example@gmail.com</a>
+                    </div>
+                    <div class="col-md-6 text-center text-lg-right">
+                        <a href="#" target="_blank"
+                            title="Muhammad Nassef @ Facebook">
+                            <i class="fa fa-facebook"></i>
+                        </a>&emsp;
+                        <a href="#" target="_blank"
+                            title="Muhammad Nassef @ Twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a>&emsp;
+                        <a href="#" target="_blank"
+                            title="Muhammad Nassef @ Linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </a>&emsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

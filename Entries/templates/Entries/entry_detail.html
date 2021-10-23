@@ -1,0 +1,12 @@
+{% extends 'Entries/base.html' %}
+{% block content %}
+<article>
+    <h2>{{ entry_detail.date_created|date:'Y-m-d H:i' }}</h2>
+    <h3>{{ entry_detail.title }}</h3>
+    <p>
+            {% lorem %}
+            {{ entry_detail.content }}
+    </p>
+</article>
+<a href="{% url 'Diary:entry-list'%}"> Back To List </a>
+{% endblock %}

@@ -8,5 +8,5 @@ Render an online version of my CV, check it from [here](https://muhammadnassef.p
 
 just a simulation for a small-medium car rental Company.
 
-Note: The App still under development, Try sign up and login from [here >> Latest Work](https://muhammadnassef.pythonanywhere.com/index/)
+Note: The App still under development, Try to sign up and login from [here >> Latest Work](https://muhammadnassef.pythonanywhere.com/index/)
 

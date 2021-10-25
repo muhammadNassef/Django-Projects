@@ -14,5 +14,8 @@
         {% endif %}
     </h3>
 </article>
-{% endfor %}
+{% empty %}
+<h3> No Items To Show </h3>
+{% endfor %}<br/>
+<a href="{% url 'Diary:entry-create'%}"> Create New </a>
 {% endblock %}

@@ -19,16 +19,14 @@ class EntryCreateView(CreateView):
     model = Entry
     fields = ['title', 'content', 'high_priority']
     success_url = reverse_lazy('Diary:entry-list')
-    context_object_name = 'entry_create'
 
 
 class EntryUpdateView(UpdateView):
     model = Entry
     fields = ['title', 'content', 'high_priority']
-    context_object_name = 'entry_update'
 
     def get_success_url(self):
-        return reverse_lazy("Diary:entry-detail", {"pk": self.entry.id})
+       return reverse_lazy("Diary:entry-detail", kwargs={"pk": self.object.id})
 
 
 class EntryDeleteView(DeleteView):

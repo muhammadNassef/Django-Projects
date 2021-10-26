@@ -10,7 +10,13 @@
 
 <body>
 <h1><a href="#"> Diary …</a></h1>
-
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <script>alert('{{ message }}');</script>
+    {% endfor %}
+</ul>
+{% endif %}
 {% block content %}{% endblock %}
 
 </body>

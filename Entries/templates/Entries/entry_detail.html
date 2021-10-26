@@ -7,7 +7,7 @@
             {{ entry_detail.content }}
     </p>
 </article>
-<a href="{% url 'Diary:entry-update' entry_detail.id %}"> Update Diary </a><br/><br/>
-<a href="{% url 'Diary:entry-delete' entry_detail.id %}"> Delete Diary </a><br/><br/>
+<a href="{% url 'Diary:entry-update' entry_detail.id %}"> ✍ Update Diary </a><br/><br/>
+<a href="{% url 'Diary:entry-delete' entry_detail.id %}"> ⛔ Delete Diary </a><br/><br/>
 <a href="{% url 'Diary:entry-list' %}"> Back To List </a>
 {% endblock %}
